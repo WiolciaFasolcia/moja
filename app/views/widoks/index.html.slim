@@ -1,0 +1,19 @@
+h1 Listing widoks
+
+table
+  thead
+    tr
+      th czesc
+      th jak s
+      th
+
+  tbody
+    - @widoks.each do |widok|
+      tr
+        td = link_to 'Show', widok
+        td = link_to 'Edit', edit_widok_path(widok)
+        td = link_to 'Destroy', widok, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Widok', new_widok_path

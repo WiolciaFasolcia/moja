@@ -1,0 +1,16 @@
+tr
+  -if can? :create, :user
+    td = user.id 
+  td = user.imie 
+  td = user.nazwisko
+  td = user.email
+  td  
+    -if (user.admin?)
+      span.glyphicon.glyphicon-ok
+    -else
+      span.glyphicon.glyphicon-remove
+  -if can? :create, :user
+    td 
+  	  =link_to '', edit_user_path(user), style: "color: #000000", class: "glyphicon glyphicon-list-alt"
+      =link_to "", destroy_user_confirm_user_path(user), style: "color: #FF0000", class: "glyphicon glyphicon-trash"
+  

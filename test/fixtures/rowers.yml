@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rodzaj: MyString
+  wielkosc_ramy: MyString
+  stan: MyString
+
+two:
+  rodzaj: MyString
+  wielkosc_ramy: MyString
+  stan: MyString

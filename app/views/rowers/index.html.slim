@@ -1,0 +1,25 @@
+h1 Lista rowerów
+= link_to 'Dodaj nowy rower', new_rower_path, class: "btn btn-primary"
+table class="table table-striped"
+  thead
+    tr
+      th ID
+      th Rodzaj
+      th Wielkosc ramy
+      th Stan
+      th
+      th
+      th
+
+  tbody
+    - @rowers.each do |rower|
+      tr
+        td = rower.id
+        td = rower.rodzaj_roweru.rodzaj
+        td = rower.wielkosc_ramy
+        td = rower.stan
+        td = link_to 'Pokaż', rower, class: "btn btn-primary"
+        td = link_to 'Edytuj', edit_rower_path(rower), class: "btn btn-warning"
+        td = link_to 'Usuń', rower, class: "btn btn-danger", data: {:confirm => 'Jesteś pewien?'}, :method => :delete
+
+br

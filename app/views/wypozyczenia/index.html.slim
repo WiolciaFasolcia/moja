@@ -1,0 +1,31 @@
+h1 Lista wypożyczeń
+= link_to 'Dodaj nowe wypożyczenie', new_wypozyczenium_path, class: "btn btn-primary"
+table class="table table-striped"
+  thead
+    tr
+      th Klient
+      th
+      th Rower
+      th Data i godzina wypożyczenia
+      th Date i godzina zwrotu
+      th
+      th
+      th
+
+  tbody
+    - @wypozyczenia.each do |wypozyczenium|
+      tr
+        td = wypozyczenium.klient.surname
+        td = wypozyczenium.klient.name
+        td = wypozyczenium.rower.id
+        td = wypozyczenium.date_begin
+        td = wypozyczenium.date_end
+        td 
+ 
+        td = link_to 'Pokaż', wypozyczenium, class: 'btn btn-primary'
+        td = link_to 'Zwróć', edit_wypozyczenium_path(wypozyczenium), class: "btn btn-warning"
+        td = link_to 'Usuń', wypozyczenium, class: "btn btn-danger", data: {:confirm => 'Jesteś pewien?'}, :method => :delete
+
+br
+
+

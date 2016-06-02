@@ -1,0 +1,21 @@
+h1 Listing rodzaj_rowerus
+
+table
+  thead
+    tr
+      th Rodzaj
+      th
+      th
+      th
+
+  tbody
+    - @rodzaj_rowerus.each do |rodzaj_roweru|
+      tr
+        td = rodzaj_roweru.rodzaj
+        td = link_to 'Show', rodzaj_roweru
+        td = link_to 'Edit', edit_rodzaj_roweru_path(rodzaj_roweru)
+        td = link_to 'Destroy', rodzaj_roweru, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Rodzaj roweru', new_rodzaj_roweru_path

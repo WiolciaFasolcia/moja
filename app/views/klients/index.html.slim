@@ -1,0 +1,27 @@
+h1 Lista klientów
+= link_to 'Dodaj klienta', new_klient_path, class: "btn btn-primary"
+table class="table table-striped"
+  thead
+    tr
+      th Imię
+      th Nazwisko
+      th Pesel
+      th Nr dowodu
+      th
+      th
+      th
+
+  tbody
+    - @klients.each do |klient|
+      tr
+        td = klient.name
+        td = klient.surname
+        td = klient.pesel
+        td = klient.nr_dowodu
+        td = link_to 'Pokaż', klient, class: "btn btn-primary"
+        td = link_to 'Edytuj', edit_klient_path(klient), class: "btn btn-warning"
+        td = link_to 'Usuń', klient, class: "btn btn-danger", data: {:confirm => 'Jesteś pewien?'}, :method => :delete
+
+br
+
+

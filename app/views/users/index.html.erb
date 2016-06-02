@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista użytkowników</h1>
+<% if can? :create, :user %>
+ <%= link_to 'Dodaj użytkownika', new_user_path, :class => 'btn btn-primary' %>
+<% end %>
+<table class="table table-striped">
+   <thead>
+     <tr>
+      <th>Imie</th>
+      <th>Nazwisko</th>
+       <th>Email</th>
+       <th>Admin</th>
+     </tr>
+   </thead>
+
+ <tbody>
+   <% @users.each do |user| %>
+     <tr>
+     <td><%= user.imie %></td>
+     <td><%= user.nazwisko %></td>
+       <td><%= user.email %></td>
+       <td><%= user.admin? %></td>
+      <td><%if can? :edit, :user%><%= link_to 'Edytuj', edit_user_path(user), :class => 'btn btn-warning' %><% end %></td>
+        <td><%if can? :edit, :user%><%= link_to 'Usuń', user_path(user), :class => 'btn btn-danger', method: :delete, data: { confirm: 'Czy jestes pewien?' } %><% end %></td>
+     </tr>
+   <% end %>
+ </tbody>
+</table>
+<center>
+          <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+</center>
+<br>

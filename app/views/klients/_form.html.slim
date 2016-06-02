@@ -1,0 +1,13 @@
+= simple_form_for(@klient) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name , label: 'Imię'
+    = f.input :surname , label: 'Nazwisko'
+    = f.input :pesel
+    = f.input :nr_dowodu
+
+  .form-actions
+    = f.button :submit, "Potwierdź", class: "btn btn-primary"
+    
+    = link_to 'Wróć', klients_path, class: "btn btn-primary"

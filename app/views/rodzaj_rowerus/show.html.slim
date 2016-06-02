@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Rodzaj:
+  = @rodzaj_roweru.rodzaj
+
+= link_to 'Edit', edit_rodzaj_roweru_path(@rodzaj_roweru)
+'|
+= link_to 'Back', rodzaj_rowerus_path

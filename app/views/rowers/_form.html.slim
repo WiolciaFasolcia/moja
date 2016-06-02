@@ -1,0 +1,10 @@
+= simple_form_for(@rower) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :rodzaj_roweru, label_method: :rodzaj, value_method: :id, include_blank: false 
+    = f.input :wielkosc_ramy
+    = f.input :stan
+
+  .form-actions
+    = f.button :submit, "Potwierdź", class: "btn btn-primary"
