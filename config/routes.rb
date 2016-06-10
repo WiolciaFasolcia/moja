@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
   
  
+  resources :wielkoscs
+  resources :rozmiars
+  resources :rozmiar_ramies
+  resources :stan_rowerus do
+   # root "rowers#index"
+  end
+  resources :rodzaj_rowerus do
+    root "rowers#index"
+  end
   resources :wypozyczenia
   resources :rowers
   resources :klients

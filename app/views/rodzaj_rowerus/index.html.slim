@@ -1,6 +1,7 @@
-h1 Listing rodzaj_rowerus
+h1 Lista rodzaj_roweru
 
-table
+= link_to 'Nowy rodzaj roweru', new_rodzaj_roweru_path, class: "btn btn-primary"
+table class="table table-striped"
   thead
     tr
       th Rodzaj
@@ -12,10 +13,9 @@ table
     - @rodzaj_rowerus.each do |rodzaj_roweru|
       tr
         td = rodzaj_roweru.rodzaj
-        td = link_to 'Show', rodzaj_roweru
-        td = link_to 'Edit', edit_rodzaj_roweru_path(rodzaj_roweru)
-        td = link_to 'Destroy', rodzaj_roweru, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Pokaż', rodzaj_roweru, class: "btn btn-primary"
+        td = link_to 'Edytuj', edit_rodzaj_roweru_path(rodzaj_roweru), class: "btn btn-primary"
+        td = link_to 'Usuń', rodzaj_roweru, data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-primary"
 
 br
 
-= link_to 'New Rodzaj roweru', new_rodzaj_roweru_path

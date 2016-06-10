@@ -1,0 +1,21 @@
+h1 Listing wielkoscs
+
+table
+  thead
+    tr
+      th Rozmiar
+      th
+      th
+      th
+
+  tbody
+    - @rozmiars.each do |rozmiar|
+      tr
+        td = rozmiar.rozmiar
+        td = link_to 'Show', rozmiar
+        td = link_to 'Edit', edit_rozmiar_path(rozmiar)
+        td = link_to 'Destroy', rozmiar, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Wielkosc', new_rozmiar_path

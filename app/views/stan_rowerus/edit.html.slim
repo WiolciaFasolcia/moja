@@ -1,0 +1,9 @@
+h1 Edytuj stan_roweru
+-if can? :create, :user
+	== render 'form'
+-else
+	h5 Nie masz uprawnień
+
+= link_to 'Cofnij', stan_rowerus_path, class: "btn btn-primary"
+
+

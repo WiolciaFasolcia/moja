@@ -6,16 +6,20 @@ p.notice
         td Klient:
   		td = @wypozyczenium.klient.surname
         td = @wypozyczenium.klient.name
-	tr
-  		td Rower:
-  		td = @wypozyczenium.rower.id
-	tr
-		td Date begin:
-		td = @wypozyczenium.date_begin
-tr
-  td Date end:
-  td = @wypozyczenium.date_end
+	    tr
+  		  td Rower:
+  		  td = @wypozyczenium.rower.id
+	    tr
+		    td Date begin:
+		    td = @wypozyczenium.date_begin
+      tr 
+        td Date end:
+        -if @wypozyczenium.date_end.blank?
+           td nie zwrócono
+        -else 
+          td = @wypozyczenium.date_end
 
-= link_to 'Edytuj', edit_wypozyczenium_path(@wypozyczenium),  class: "btn btn-warning"
 
-= link_to 'Wróć', wypozyczenia_path,  class: "btn btn-primary"
+
+tr = link_to 'Edytuj', edit_wypozyczenium_path(@wypozyczenium),  class: "btn btn-warning"
+tr = link_to 'Wróć', wypozyczenia_path,  class: "btn btn-primary"

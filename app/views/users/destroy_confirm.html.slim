@@ -1,6 +1,6 @@
 h1.page-header Usuwanie konta
 
--if @user.admin?
+-if can? :create, :user
 	p Usunięcie konta spowoduje usunięcie wszystkich namespace'ów oraz projektów, które stworzyłeś! TEJ OPERACJI NIE MOŻNA COFNĄĆ!
 	p Aby potwierdzić, wpisz swoje hasło:
 -else

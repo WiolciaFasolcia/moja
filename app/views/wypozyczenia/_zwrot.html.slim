@@ -11,4 +11,6 @@
     = f.input :date_end
 
   .form-actions
-    = f.button :submit, "Potwierdź", class: "btn btn-primary"
+  tr
+    td = f.button :submit, "Potwierdź", class: "btn btn-primary"
+    td = link_to 'Wróć', wypozyczenia_path, class: "btn btn-primary"

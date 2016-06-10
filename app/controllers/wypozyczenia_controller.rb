@@ -4,7 +4,7 @@ class WypozyczeniaController < ApplicationController
   # GET /wypozyczenia
   # GET /wypozyczenia.json
   def index
-    @wypozyczenia = Wypozyczenium.all
+    @wypozyczenia = Wypozyczenium.distinct.order(date_end: :asc).paginate(:page => params[:projects_page], :per_page => 10)
   end
 
   # GET /wypozyczenia/1

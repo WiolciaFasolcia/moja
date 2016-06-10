@@ -20,8 +20,9 @@ table class="table table-striped"
         td = klient.nr_dowodu
         td = link_to 'Pokaż', klient, class: "btn btn-primary"
         td = link_to 'Edytuj', edit_klient_path(klient), class: "btn btn-warning"
-        td = link_to 'Usuń', klient, class: "btn btn-danger", data: {:confirm => 'Jesteś pewien?'}, :method => :delete
+
 
 br
-
+center
+  = will_paginate @klients, renderer: BootstrapPagination::Rails, :previous_label => "Poprzedni", :next_label=> "Następny"
 

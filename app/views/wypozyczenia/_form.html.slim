@@ -7,9 +7,11 @@
           li = message
 
   .form-inputs
-    = f.association :klient, value_method: :id, include_blank: false 
-    = f.association :rower, label_method: :id, value_method: :id, include_blank: false
-    = f.input :date_begin
+    = f.association :klient, value_method: :id, include_blank: false, required: true
+    = f.association :rower, label_method: :id, value_method: :id, include_blank: false, required: true
+    = f.input :date_begin, required: true
 
   .form-actions
-    = f.button :submit, "Potwierdź", class: "btn btn-primary"
+  th
+    td = f.button :submit, "Potwierdź", class: "btn btn-primary"
+    td = link_to 'Wróć', wypozyczenia_path, class: "btn btn-primary"

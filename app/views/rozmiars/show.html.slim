@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Rozmiar:
+  = @rozmiar.rozmiar
+
+= link_to 'Edit', edit_rozmiar_path(@rozmiar)
+'|
+= link_to 'Back', rozmiars_path

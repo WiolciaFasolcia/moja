@@ -1,8 +1,8 @@
-h1 Editing rodzaj_roweru
+h1 Edytuj rodzaj_roweru
+-if can? :create, :user
+	== render 'form'
+-else
+	h5 Nie masz uprawnień
 
-== render 'form'
-
-= link_to 'Show', @rodzaj_roweru
-'|
-= link_to 'Back', rodzaj_rowerus_path
+= link_to 'Cofnij', rodzaj_rowerus_path, class: "btn btn-primary"
 

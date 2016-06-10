@@ -3,8 +3,10 @@
 
   .form-inputs
     = f.association :rodzaj_roweru, label_method: :rodzaj, value_method: :id, include_blank: false 
-    = f.input :wielkosc_ramy
-    = f.input :stan
+    = f.association :rozmiar, label_method: :rozmiar, value_method: :id, include_blank: false
+    = f.association :stan_roweru, label_method: :nazwa, value_method: :id, include_blank: false 
 
   .form-actions
-    = f.button :submit, "Potwierdź", class: "btn btn-primary"
+  th
+    td = f.button :submit, "Potwierdź", class: "btn btn-primary"
+	td= link_to 'Wróć', rowers_path, class: "btn btn-primary"

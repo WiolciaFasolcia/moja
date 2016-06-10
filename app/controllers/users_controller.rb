@@ -61,10 +61,16 @@ end
   end
 
   def destroy_confirm
+    @user = User.find(current_user.id)
+    if @user.destroy
+      flash[:notice] = "Usunięto użytkownika."
+      redirect_to root_path
+    end
     if params[:id].present?
       @user = User.find(params[:id])
     end
   end
+   
 
   def destroy_with_password
     if params[:id].present?

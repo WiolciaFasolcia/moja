@@ -10,7 +10,8 @@
     = f.input :imie, required: true, autofocus: true 
     = f.input :nazwisko, required: true, autofocus: true 
     = f.input :email, required: true, autofocus: true 
-    = f.input :admin, required: true, autofocus: true 
+    -if @user.admin?
+      = f.input :admin, required: true, autofocus: true 
   
   tr
   td =f.button :submit, "Potwierdź" , :class => 'btn btn-primary'

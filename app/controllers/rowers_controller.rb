@@ -4,7 +4,7 @@ class RowersController < ApplicationController
   # GET /rowers
   # GET /rowers.json
   def index
-    @rowers = Rower.all
+    @rowers = Rower.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /rowers/1
@@ -69,6 +69,6 @@ class RowersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rower_params
-      params.require(:rower).permit(:rodzaj_roweru_id, :rodzaj, :wielkosc_ramy, :stan)
+      params.require(:rower).permit(:rodzaj_roweru_id, :rozmiar_id, :rodzaj, :wielkosc_ramy, :stan, :stan_roweru_id)
     end
 end

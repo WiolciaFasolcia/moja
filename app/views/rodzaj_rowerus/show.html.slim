@@ -1,9 +1,9 @@
 p#notice = notice
+-if can? :create, :user
+	p
+  		strong Rodzaj:
+  		= @rodzaj_roweru.rodzaj
 
-p
-  strong Rodzaj:
-  = @rodzaj_roweru.rodzaj
+= link_to 'Edytuj', edit_rodzaj_roweru_path(@rodzaj_roweru), class: "btn btn-primary"
 
-= link_to 'Edit', edit_rodzaj_roweru_path(@rodzaj_roweru)
-'|
-= link_to 'Back', rodzaj_rowerus_path
+= link_to 'Cofnij', rodzaj_rowerus_path, class: "btn btn-primary"

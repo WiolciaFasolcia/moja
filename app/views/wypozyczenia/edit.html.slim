@@ -9,16 +9,10 @@ p.notice
 	tr
   		td Rower:
   		td = @wypozyczenium.rower.id
+    
 	tr
 		td Date begin:
 		td = @wypozyczenium.date_begin
-tr
-  td Date end:
-  td = @wypozyczenium.date_end
-
+    
 
 == render 'zwrot'
-
-= link_to 'Pokaż', @wypozyczenium, class: "btn btn-primary"
-
-= link_to 'Wróć', wypozyczenia_path, class: "btn btn-primary"

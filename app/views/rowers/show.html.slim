@@ -10,11 +10,12 @@ p.notice
         td = @rower.rodzaj_roweru.rodzaj
 	tr
   		td Wielkość ramy:
-  		td = @rower.wielkosc_ramy
+  		td = @rower.rozmiar.rozmiar
 	tr
 		td Stan:
-		td = @rower.stan
+		td = @rower.stan_roweru.nazwa
 
-= link_to 'Edytuj', edit_rower_path(@rower), class: "btn btn-warning"
+tr
+td = link_to 'Edytuj', edit_rower_path(@rower), class: "btn btn-warning"
 
-= link_to 'Wróć', rower_path, class: "btn btn-primary"
+td = link_to 'Wróć', rowers_path, class: "btn btn-primary"

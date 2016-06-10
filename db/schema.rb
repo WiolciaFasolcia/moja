@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160528152126) do
+ActiveRecord::Schema.define(version: 20160606121249) do
 
   create_table "klients", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "surname",    limit: 255
-    t.float    "pesel",      limit: 24
+    t.integer  "pesel",      limit: 8
     t.string   "nr_dowodu",  limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
@@ -29,11 +29,23 @@ ActiveRecord::Schema.define(version: 20160528152126) do
   end
 
   create_table "rowers", force: :cascade do |t|
-    t.string   "wielkosc_ramy",    limit: 255
-    t.string   "stan",             limit: 255
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "rodzaj_roweru_id", limit: 4
+    t.integer  "stan_roweru_id",   limit: 4, null: false
+    t.integer  "rozmiar_id",       limit: 4, null: false
+  end
+
+  create_table "rozmiars", force: :cascade do |t|
+    t.integer  "rozmiar",    limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "stan_rowerus", force: :cascade do |t|
+    t.string   "nazwa",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,9 +74,15 @@ ActiveRecord::Schema.define(version: 20160528152126) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "wielkoscs", force: :cascade do |t|
+    t.integer  "rozmiar",    limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
   create_table "wypozyczenia", force: :cascade do |t|
-    t.date     "date_begin"
-    t.date     "date_end"
+    t.datetime "date_begin"
+    t.datetime "date_end"
     t.boolean  "status"
     t.integer  "klient_id",  limit: 4, null: false
     t.integer  "rower_id",   limit: 4
@@ -75,6 +93,4 @@ ActiveRecord::Schema.define(version: 20160528152126) do
   add_index "wypozyczenia", ["klient_id"], name: "fk_rails_ef1e0140d7", using: :btree
   add_index "wypozyczenia", ["rower_id"], name: "fk_rails_e49bd10087", using: :btree
 
-  add_foreign_key "wypozyczenia", "klients"
-  add_foreign_key "wypozyczenia", "rowers"
 end

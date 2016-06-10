@@ -23,9 +23,12 @@ table class="table table-striped"
         td 
  
         td = link_to 'Pokaż', wypozyczenium, class: 'btn btn-primary'
+      
         td = link_to 'Zwróć', edit_wypozyczenium_path(wypozyczenium), class: "btn btn-warning"
-        td = link_to 'Usuń', wypozyczenium, class: "btn btn-danger", data: {:confirm => 'Jesteś pewien?'}, :method => :delete
+
 
 br
 
+center
+  = will_paginate @wypozyczenia, renderer: BootstrapPagination::Rails, :previous_label => "Poprzedni", :next_label=> "Następny"
 

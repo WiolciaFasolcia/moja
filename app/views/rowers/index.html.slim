@@ -16,10 +16,9 @@ table class="table table-striped"
       tr
         td = rower.id
         td = rower.rodzaj_roweru.rodzaj
-        td = rower.wielkosc_ramy
-        td = rower.stan
+        td = rower.rozmiar.rozmiar
+        td = rower.stan_roweru.nazwa
         td = link_to 'Pokaż', rower, class: "btn btn-primary"
         td = link_to 'Edytuj', edit_rower_path(rower), class: "btn btn-warning"
-        td = link_to 'Usuń', rower, class: "btn btn-danger", data: {:confirm => 'Jesteś pewien?'}, :method => :delete
 
 br

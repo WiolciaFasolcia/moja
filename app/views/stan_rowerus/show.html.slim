@@ -1,0 +1,9 @@
+p#notice = notice
+-if can? :create, :user
+	p
+  		strong Nazwa:
+  		= @stan_roweru.nazwa
+
+= link_to 'Edytuj', edit_stan_roweru_path(@stan_roweru), class: "btn btn-primary"
+
+= link_to 'Cofnij', stan_rowerus_path, class: "btn btn-primary"

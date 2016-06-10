@@ -1,0 +1,20 @@
+h1 Lista stan_roweru
+= link_to 'Nowy Stan roweru', new_stan_roweru_path, class: "btn btn-primary"
+table class="table table-striped"
+  thead
+    tr
+      th Nazwa
+      th
+      th
+      th
+
+  tbody
+    - @stan_rowerus.each do |stan_roweru|
+      tr
+        td = stan_roweru.nazwa
+        td = link_to 'Edytuj', edit_stan_roweru_path(stan_roweru), class: "btn btn-primary"
+        td = link_to 'Usuń', stan_roweru, data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-primary"
+
+br
+
+
